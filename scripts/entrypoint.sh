@@ -10,6 +10,8 @@ fi
 WORKTREE='/var/html/worktree'
 GITDIR='/var/html/gitdir'
 
+rm -rf ${WORKTREE} ${GITDIR}
+
 # Setup Git environment
 git clone													\
 	"--separate-git-dir=${GITDIR}"	\
