@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Build test docker image
-        run: docker build --build-arg BASEIMAGE=${{ GITHUB_REPOSITORY }} -t ${{ GITHUB_REPOSITORY }}-test test/
+        run: docker build --build-arg BASEIMAGE=${{ github.repository }} -t ${{ github.repository }}-test test/
       - name: Run test docker image
-        run: docker run --rm ${{ GITHUB_REPOSITORY }}-test
+        run: docker run --rm ${{ github.repository }}-test
 

@@ -8,5 +8,5 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Build docker image
-      run: docker build -t ${{ GITHUB_REPOSITORY }} .
+      run: docker build -t ${{ github.repository }} .
 
