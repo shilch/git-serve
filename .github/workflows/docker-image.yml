@@ -1,4 +1,4 @@
-name: Docker Image Actions
+name: Docker Image
 
 on: [push, pull_request]
 
