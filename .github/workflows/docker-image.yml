@@ -24,8 +24,11 @@ jobs:
         uses: actions/download-artifact@v1
         with:
           name: image
+          path: image.tar
       - name: Load docker image
         run: docker load -i image.tar
+      - name: Remove docker image file
+        run: rm image.tar
       - uses: actions/checkout@v1
       - name: Build test docker image
         run: docker build --build-arg BASEIMAGE=${{ github.repository }} -t ${{ github.repository }}-test test/
@@ -44,6 +47,7 @@ jobs:
         uses: actions/download-artifact@v1
         with:
           name: image
+          path: image.tar
       - name: Load docker image
         run: docker load -i image.tar
       - name: Publish docker image to registry
